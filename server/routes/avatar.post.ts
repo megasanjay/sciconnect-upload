@@ -69,7 +69,7 @@ export default defineEventHandler(async (event) => {
 
   // Save the file to the bunny storage
   const uploadResponse = await fetch(
-    `https://la.storage.bunnycdn.com/${process.env.BUNNY_STORAGE_BUCKET_NAME}/avatars/${file.filename}`,
+    `https://la.storage.bunnycdn.com/${process.env.BUNNY_STORAGE_BUCKET_NAME}/avatar/${file.filename}`,
     {
       method: "PUT",
       headers: {
