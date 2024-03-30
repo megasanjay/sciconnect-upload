@@ -9,7 +9,13 @@ export default defineEventHandler(async (event) => {
 
   const body = await readMultipartFormData(event);
 
-  //   console.log(body);
+  if (body.length !== 1) {
+    throw createError({
+      message: "Expected exactly one file",
+      statusCode: 400,
+    });
+  }
+
   const file = body[0];
 
   // Save the file to the bunny storage
